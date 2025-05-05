@@ -1,0 +1,35 @@
+{
+    "dependencies": {
+        "git": {
+            "version": "latest"
+        },
+        "uv": {
+          "version": "latest"
+        }
+    },
+    "installation": [
+        {
+            "name": "Cloning repository",
+            "commands": [
+                "git clone https://github.com/browser-use/web-ui.git ."
+            ]
+        },
+        {
+            "name": "Installing requirements",
+              "env": "env",
+              "commands": [
+                { "command": "uv pip install -r requirements.txt" },
+              ]
+        }
+    ],
+    "start": [
+        {
+            "name": "Starting Browser-Use",
+            "catch": "7788",
+            "env": "env",
+            "commands": [
+              "python webui.py --ip 127.0.0.1 --port 7788"
+            ]
+        }
+    ],
+}
